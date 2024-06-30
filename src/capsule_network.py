@@ -14,7 +14,7 @@ class CapsLayerWithClusterRouting(nn.Module):
         self.D_in = D_in
         self.D_out = D_out
         self.conv_trans = nn.ModuleList()
-        for i in range(self.C_out):
+        for i in range(self.C_in):
             self.conv_trans.append(nn.Conv2d(self.D_in, self.C_out * self.K * self.D_out, 3,
                                              stride=stride, padding=1, bias=B))
         self.acti = nn.LayerNorm([self.D_out, out_S, out_S])
